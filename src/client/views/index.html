@@ -2,19 +2,30 @@
 <html>
   <!-- Head and metadata -->
   <head>
-    <meta charset="utf-8"/>
-    <title>Travel Planner</title>
-    <meta name="description" content="Travel Planner"/>
-    <meta name="author" content="Pieter Smith"/>
-    <meta name="keywords" content="Travel Planner, Travel Weather"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <!-- For details on what this viewport meta tag and its related values do, see https://www.w3schools.com/css/css_rwd_viewport.asp -->
-    <meta name="theme-color" content="#fbfdf8" /> <!-- Sets the color of the header bar and address bar in Android mobile browsers. -->
+    <meta charset="utf-8" />
+    <title>Trip Weather</title>
+    <meta
+      name="description"
+      content="An interactive travel planner web app that provides users with real-time weather updates before departure"
+    />
+    <meta name="author" content="Pieter Smith" />
+    <meta
+      name="keywords"
+      content="Trip Weather, Travel Planner, Travel Weather"
+    />
+    <!-- For details on what this viewport meta tag and its related values do, see https://www.w3schools.com/css/css_rwd_viewport.asp -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Sets the color of the header bar and address bar in Android mobile browsers. -->
+    <meta name="theme-color" content="#fbfdf8" />
 
     <!-- Use fonts from Google Fonts - https://fonts.google.com/ -->
     <!-- Roboto Condensed for all body and element text, Lobster for titles. -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto+Condensed:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- My external style sheets -->
     <!-- Uncomment the minified main.css stylesheet line below when deploying to production.
@@ -32,43 +43,87 @@
       <!-- Header -->
       <div id="header-container" class="box3">
         <div id="logo-container" class="box4">
-          <!-- SVG logo taken from https://www.svgrepo.com/svg/58117/airplane-travelling-around-earth and used under creative commons license. -->
-          <svg id="logo" class="box5" width="78" height="78" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 46.184 46.184" style="enable-background:new 0 0 46.184 46.184;" xml:space="preserve">
-            <path fill="#4b9b69" d="M7.746,32.708c-1.244-2.01-2.152-5.084-2.152-8.371c0-9.856,8.019-17.875,17.873-17.875c2.029,0,3.975,0.357,5.793,0.982
+          <a href="/">
+            <!-- SVG logo taken from https://www.svgrepo.com/svg/58117/airplane-travelling-around-earth and used under creative commons license. -->
+            <svg
+              id="logo"
+              class="box5"
+              width="78"
+              height="78"
+              version="1.1"
+              id="Capa_1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="0px"
+              y="0px"
+              viewBox="0 0 46.184 46.184"
+              style="enable-background: new 0 0 46.184 46.184"
+              xml:space="preserve"
+            >
+              <path
+                fill="#4b9b69"
+                d="M7.746,32.708c-1.244-2.01-2.152-5.084-2.152-8.371c0-9.856,8.019-17.875,17.873-17.875c2.029,0,3.975,0.357,5.793,0.982
               l-2.17-2.635c-1.177-0.219-2.385-0.348-3.623-0.348c-10.958,0-19.873,8.916-19.873,19.875c0,3.659,1.013,7.08,2.434,9.387
-              L7.746,32.708z"/>
-            <path fill="#4b9b69" d="M40.784,19.93c0.359,1.41,0.557,2.885,0.557,4.407c0,9.854-8.019,17.873-17.874,17.873c-4.185,0-8.027-1.453-11.071-3.875
+              L7.746,32.708z"
+              />
+              <path
+                fill="#4b9b69"
+                d="M40.784,19.93c0.359,1.41,0.557,2.885,0.557,4.407c0,9.854-8.019,17.873-17.874,17.873c-4.185,0-8.027-1.453-11.071-3.875
               l-1.77,1.127c3.463,2.955,7.941,4.748,12.841,4.748c10.959,0,19.874-8.916,19.874-19.873c0-0.726-0.051-1.437-0.127-2.14
-              L40.784,19.93z"/>
-            <path fill="#4b9b69" d="M46.157,18.898c-0.248-1.183-5.137-8.079-5.137-8.079s4.153-4.012,4.428-4.488c0.273-0.476,1.325-1.543-0.016-2.646
+              L40.784,19.93z"
+              />
+              <path
+                fill="#4b9b69"
+                d="M46.157,18.898c-0.248-1.183-5.137-8.079-5.137-8.079s4.153-4.012,4.428-4.488c0.273-0.476,1.325-1.543-0.016-2.646
               c-1.342-1.101-2.303-0.389-2.778,0.036c-0.477,0.427-4.044,3.622-4.044,3.622s-7.241-5.272-8.437-5.365
               c-1.195-0.094-1.993,0.975-1.993,0.975l7.366,7.427l-3.61,4.259l-3.225-0.941l-1.783,1.098c0,0,3.539,1.543,4.239,2.432
               c0.701,0.889,1.625,3.84,1.625,3.84l1.699-0.895l-0.793-3.885l4.098-3.262l7.025,7.704C44.823,20.73,46.405,20.081,46.157,18.898z
-              "/>
-            <path fill="#4b9b69" d="M29.617,18.401c-0.666-0.625-1.729-1.018-1.729-1.018C19.088,25.935,8.106,35.353,5.717,35.656
+              "
+              />
+              <path
+                fill="#4b9b69"
+                d="M29.617,18.401c-0.666-0.625-1.729-1.018-1.729-1.018C19.088,25.935,8.106,35.353,5.717,35.656
               c-0.907,0.065-1.479-0.146-1.705-0.634c-0.255-0.557-0.562-0.917,0.087-1.569l-1.856-4.137c-1.772,1.782-2.859,5.212-1.863,7.377
               c0.868,1.888,2.735,2.974,5.062,2.974c0.188,0,0.381-0.008,0.574-0.021c4.728-0.352,20.071-14.934,24.662-19.393
-              C30.677,20.252,30.283,19.026,29.617,18.401z"/>
-          </svg>
+              C30.677,20.252,30.283,19.026,29.617,18.401z"
+              />
+            </svg>
+          </a>
 
-          <h1><span id="header-title" class="box5">Travel Planner</span></h1>
+          <h1>
+            <a href="/"
+              ><span id="header-title" class="box5">Trip Weather</span></a
+            >
+          </h1>
         </div>
 
-        <input id="destination-name-input" class="header-input" type="text" autofocus="autofocus" placeholder="Travel to">
-        
+        <input
+          id="destination-name-input"
+          class="header-input"
+          type="text"
+          autofocus="autofocus"
+          placeholder="Travel to"
+        />
+
         <div id="datesubmit-container" class="box4">
           <!-- A bit of inline JavaScript below to block out the selection of past dates,
           and only allow 7 days (including the current date) in the future to be selected using the HTML date element below
-          (since the Weatherbit API only supports 7 day weather forcasts from the present date using their free plan).
+          (since the Weatherbit API only supports 7 day weather forecasts from the present date using their free plan).
           See the following URL for more info on adding days to a date (including the addDays prototype function below):
           https://stackoverflow.com/questions/563406/how-to-add-days-to-date -->
-          <input id="arrival-date-input" class="header-input" type="text" placeholder="Arrival date" onfocus="
+          <input
+            id="arrival-date-input"
+            class="header-input"
+            type="text"
+            placeholder="Arrival date"
+            onfocus="
             this.type = 'date';
             this.value = new Date().toISOString().split('T')[0]; // Default date value = today's date.
             this.min = new Date().toISOString().split('T')[0]; // Minimum date value = today's date.
             Date.prototype.addDays = function(d){return new Date(this.valueOf()+864E5*d);};
             this.max = new Date().addDays(6).toISOString().split('T')[0]; // Maximum date value = today's date + 6 days.
-          ">
+          "
+          />
           <button id="submit-button" type="submit">Submit</button>
         </div>
       </div>
@@ -76,11 +131,18 @@
       <!-- Destination -->
       <div id="destination-container" class="box3">
         <div id="destination-image-container" class="box4">
-          <!-- A bit of inline JavaScript below to display a blank placeholder image from placeholder.com
+          <!-- A bit of inline JavaScript below to display a blank placeholder image from dummyimage.com
           if a destination image from Pixabay could not be found or was not set by our code. -->
-          <img id="destination-image" title="" alt="Destination" src="" onerror="
-            this.src = encodeURI('https://via.placeholder.com/1280x854.png/7cda9c/97f7b6?text= ');
-          ">
+          <img
+            id="destination-image"
+            title=""
+            alt="Destination"
+            src=""
+            onerror="
+            this.src = encodeURI('https://dummyimage.com/1280x854/7cda9c/97f7b6.png&text=+');
+          "
+          />
+
           <div id="destination-name" class="box5"></div>
         </div>
         <div id="geo-container" class="box4">
@@ -88,47 +150,6 @@
           <h4 id="country-name" class="box5"></h4>
           <h6 id="population" class="box5"></h6>
           <div id="date-countdown" class="box5"></div>
-        </div>
-      </div>      
-
-      <!-- Current weather -->
-      <div id="weather-current-container" class="weather-container box3">
-        <h5 id="weather-current-title" class="weather-title box4"></h5>
-        <div id="weather-current-main-grid" class="weather-main-grid box4">
-          <div id="weather-current-temp-grid" class="box5">
-            <div id="current-minmax-temp"></div>
-            <h1 id="current-temp"></h1>
-            <div id="current-feels-like-temp"></div>
-          </div>
-          <div id="weather-current-icon-grid" class="box5">
-            <!-- Insert a transparent gif below as the default src for the weather icon image (will be overwritten later using JavaScript).
-            This is to avoid the default "broken" placeholder image in most browsers when an image tag is set without a src value or with a blank src value.
-            See the following URL for more details on this method: https://stackoverflow.com/questions/5775469/whats-the-valid-way-to-include-an-image-with-no-src -->
-            <img id="current-icon" title="" alt="Weather" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=">
-            <div id="current-description"></div>
-          </div>
-          <div id="weather-current-details-grid" class="box5">
-            <div class="weather-details">Details</div>
-            <div>&nbsp;</div>
-            <div>Chance of rain</div>
-            <div id="current-chance-of-rain" class="weather-details"></div>
-            <div>Wind speed</div>
-            <div id="current-wind-speed" class="weather-details"></div>
-            <div>Wind gust speed</div>
-            <div id="current-wind-gust-speed" class="weather-details"></div>
-            <div>Wind direction</div>
-            <div id="current-wind-direction" class="weather-details"></div>
-            <div>Cloud coverage</div>
-            <div id="current-cloud-coverage" class="weather-details"></div>
-            <div>UV index (0-11+)</div>
-            <div id="current-uv-index" class="weather-details"></div>
-            <div>Humidity</div>
-            <div id="current-humidity" class="weather-details"></div>
-            <div>Sunrise time</div>
-            <div id="current-sunrise-time" class="weather-details"></div>
-            <div>Sunset time</div>
-            <div id="current-sunset-time" class="weather-details"></div>
-          </div>
         </div>
       </div>
 
@@ -145,7 +166,12 @@
             <!-- Insert a transparent gif below as the default src for the weather icon image (will be overwritten later using JavaScript).
             This is to avoid the default "broken" placeholder image in most browsers when an image tag is set without a src value or with a blank src value.
             See the following URL for more details on this method: https://stackoverflow.com/questions/5775469/whats-the-valid-way-to-include-an-image-with-no-src -->
-            <img id="arrival-icon" title="" alt="Weather" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=">
+            <img
+              id="arrival-icon"
+              title=""
+              alt="Weather"
+              src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+            />
             <div id="arrival-description"></div>
           </div>
           <div id="weather-arrival-details-grid" class="box5">
@@ -172,16 +198,68 @@
           </div>
         </div>
       </div>
+
+      <!-- Current weather -->
+      <div id="weather-current-container" class="weather-container box3">
+        <h5 id="weather-current-title" class="weather-title box4"></h5>
+        <div id="weather-current-main-grid" class="weather-main-grid box4">
+          <div id="weather-current-temp-grid" class="box5">
+            <div id="current-minmax-temp"></div>
+            <h1 id="current-temp"></h1>
+            <div id="current-feels-like-temp"></div>
+          </div>
+          <div id="weather-current-icon-grid" class="box5">
+            <!-- Insert a transparent gif below as the default src for the weather icon image (will be overwritten later using JavaScript).
+            This is to avoid the default "broken" placeholder image in most browsers when an image tag is set without a src value or with a blank src value.
+            See the following URL for more details on this method: https://stackoverflow.com/questions/5775469/whats-the-valid-way-to-include-an-image-with-no-src -->
+            <img
+              id="current-icon"
+              title=""
+              alt="Weather"
+              src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+            />
+            <div id="current-description"></div>
+          </div>
+          <div id="weather-current-details-grid" class="box5">
+            <div class="weather-details">Details</div>
+            <div>&nbsp;</div>
+            <div>Chance of rain</div>
+            <div id="current-chance-of-rain" class="weather-details"></div>
+            <div>Wind speed</div>
+            <div id="current-wind-speed" class="weather-details"></div>
+            <div>Wind gust speed</div>
+            <div id="current-wind-gust-speed" class="weather-details"></div>
+            <div>Wind direction</div>
+            <div id="current-wind-direction" class="weather-details"></div>
+            <div>Cloud coverage</div>
+            <div id="current-cloud-coverage" class="weather-details"></div>
+            <div>UV index (0-11+)</div>
+            <div id="current-uv-index" class="weather-details"></div>
+            <div>Humidity</div>
+            <div id="current-humidity" class="weather-details"></div>
+            <div>Sunrise time</div>
+            <div id="current-sunrise-time" class="weather-details"></div>
+            <div>Sunset time</div>
+            <div id="current-sunset-time" class="weather-details"></div>
+          </div>
+        </div>
+      </div>
     </div>
-    
+
+    <!-- Only ever run service workers in your production environment (so where you run "npm start" i.e. node, and not "npm run dev" i.e. the webpack-dev-server) by commenting out the code below.
+    This is to avoid the "WARNING in GenerateSW has been called multiple times, perhaps due to running webpack in --watch mode. The precache manifest generated after the first call may be inaccurate!"
+    issue when running service workers on your webpack-dev-server (since service workers doesn't doesn't play nicely with webpack-dev-server).
+    Full details here: https://github.com/GoogleChrome/workbox/issues/1790 -->
+    <!--
     <script>
       // Check that service workers are supported.
-      if ('serviceWorker' in navigator) {
+      if ("serviceWorker" in navigator) {
         // Use the window load event to keep the page load performant.
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/service-worker.js');
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/service-worker.js");
         });
       }
     </script>
+    -->
   </body>
 </html>

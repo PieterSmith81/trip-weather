@@ -2,23 +2,23 @@
 Theme CSS styles
 */
 /*
-    Using the CSS variables (part of CSS custom properties) as documented here:
-    https://developer.mozilla.org/en-US/docs/Web/CSS/--*
+  Using the CSS variables (part of CSS custom properties) as documented here:
+  https://developer.mozilla.org/en-US/docs/Web/CSS/--*
 
-    Theme colors obtained from Google's Meterial Design 3 Theme Builder here:
-    https://material-foundation.github.io/material-theme-builder/#/custom
+  Theme colours obtained from Google's Material Design 3 Theme Builder here:
+  https://material-foundation.github.io/material-theme-builder/#/custom
 
-    Basic implementation of CSS variables:
-        In CSS, you can declare your variables in the root block:
-        :root {
-        --main-bg-color: #1596A7;
-        }
-
-        And implement it using with the var() method:
-        .panel-header {
-            background: var(--main-bg-color);
-            color: ...
+  Basic implementation of CSS variables:
+    In CSS, you can declare your variables in the root block:
+    :root {
+    --main-bg-color: #1596A7;
     }
+
+    And implement it using with the var() method:
+    .panel-header {
+      background: var(--main-bg-color);
+      color: ...
+  }
 */
 
 :root {

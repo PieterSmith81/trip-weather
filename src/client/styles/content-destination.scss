@@ -30,7 +30,7 @@ Destination content CSS styles
   left: 0;
   right: 0;
   overflow: hidden;
-  font-family: 'Lobster', cursive;
+  font-family: "Lobster", cursive;
   color: var(--primary);
   text-shadow: 0.1875rem 0.1875rem var(--on-primary-container);
   padding: 0 0.075em 0.075em 0; /* Fixes Lobster font getting cut off on the right and bottom edges. */
@@ -44,10 +44,10 @@ Destination content CSS styles
 #geo-container {
   display: grid;
   grid-template-areas:
-  "regionname"
-  "countryname"
-  "population"
-  "countdown";
+    "regionname"
+    "countryname"
+    "population"
+    "countdown";
   padding: var(--spacing) var(--spacing) 0 var(--spacing);
   overflow: hidden;
 }
@@ -88,7 +88,7 @@ Destination content CSS styles
 }
 
 /* Responsive design for wider and the widest displays (e.g. tablets, monitors, and laptop screens). */
-@media(min-width: 720px) {
+@media (min-width: 720px) {
   #destination-name {
     font-size: var(--font-size-superultra);
     margin: 0 0.55em 0.2em 0.55em;
@@ -96,9 +96,9 @@ Destination content CSS styles
 
   #geo-container {
     grid-template-areas:
-    "countdown regionname"
-    "countdown countryname"
-    "countdown population";
+      "countdown regionname"
+      "countdown countryname"
+      "countdown population";
     column-gap: 2.5rem;
   }
 

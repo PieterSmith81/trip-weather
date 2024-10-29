@@ -3,7 +3,7 @@ Global CSS styles
 */
 /* The "*" below refers to all elements. */
 * {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
 }
 
 body {
@@ -17,10 +17,10 @@ body {
   /* gap: var(--spacing); */
   /* Default responsive design for narrow displays (e.g. mobile phones). */
   grid-template-areas:
-  "header"
-  "destination"
-  "weather-current"
-  "weather-arrival";
+    "header"
+    "destination"
+    "weather1"
+    "weather2";
 }
 
 h1 {
@@ -81,23 +81,23 @@ This is very handy for element positioning and alignment. */
 }
 
 /* Responsive design for wider displays (e.g. tablets). */
-@media(min-width: 720px) {
+@media (min-width: 720px) {
   #page-container {
     grid-template-areas:
-    "header header"
-    "destination destination"
-    "weather-current weather-arrival";
+      "header header"
+      "destination destination"
+      "weather1 weather2";
   }
 }
 
 /* Responsive design for the widest displays (e.g. monitors and laptop screens). */
-@media(min-width: 1280px) {
+@media (min-width: 1280px) {
   #page-container {
     grid-template-areas:
-    "header destination"
-    "weather-current destination"
-    "weather-arrival destination";
-     /* See the related post-submit, grid-template-columns and column-gap styling code at the bottom of the retrieveData function in the src/client/js/app.js JavaScript file. */
+      "header destination"
+      "weather1 destination"
+      "weather2 destination";
+    /* See the related post-submit, grid-template-columns and column-gap styling code at the bottom of the retrieveData function in the src/client/js/app.js JavaScript file. */
     grid-template-columns: auto 0;
     column-gap: 0;
   }

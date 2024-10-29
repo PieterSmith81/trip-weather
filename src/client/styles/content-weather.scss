@@ -9,8 +9,22 @@ Weather content CSS styles
   justify-content: flex-end;
 }
 
+/* The two CSS rules below is to ensure that the first visible HTML weather container is always displayed in the first weather grid area
+and the second visible HTML weather container (should one exist) is always displayed in the second weather grid area.
+
+This is to ensure that the arrival weather is shown in the first weather grid area, should it be visible.
+But if the arrival weather is not visible (so if the user selected today's date as the arrival date, in which case only the current weather is shown),
+then the current weather is shown in the first weather grid area. */
+.weather-container:nth-child(1) {
+  grid-area: weather1;
+}
+
+.weather-container:nth-child(2) {
+  grid-area: weather2;
+}
+
 .weather-title {
-  font-family: 'Lobster', cursive;
+  font-family: "Lobster", cursive;
   color: var(--tertiary);
   text-shadow: 0.0625rem 0.0625rem var(--on-tertiary-container);
   padding: 0 0.075em 0.075em 0; /* Fixes Lobster font getting cut off on the right and bottom edges. */
@@ -32,15 +46,15 @@ Weather content CSS styles
 }
 
 #weather-current-container {
-  grid-area: weather-current;
+  /* grid-area: weather2; */
   /* display: flex */
   display: none; /* Top-level flex container is hidden by default and only displayed when submit button is clicked. */
 }
 
 #weather-current-main-grid {
   grid-template-areas:
-  "weathercurrenttemp weathercurrenticon"
-  "weathercurrentdetails weathercurrentdetails";
+    "weathercurrenttemp weathercurrenticon"
+    "weathercurrentdetails weathercurrentdetails";
 }
 
 #weather-current-temp-grid {
@@ -63,15 +77,15 @@ Weather content CSS styles
 }
 
 #weather-arrival-container {
-  grid-area: weather-arrival;
+  /* grid-area: weather1; */
   /* display: flex */
   display: none; /* Top-level flex container is hidden by default and only displayed when submit button is clicked. */
 }
 
 #weather-arrival-main-grid {
   grid-template-areas:
-  "weatherarrivaltemp weatherarrivalicon"
-  "weatherarrivaldetails weatherarrivaldetails";
+    "weatherarrivaltemp weatherarrivalicon"
+    "weatherarrivaldetails weatherarrivaldetails";
 }
 
 #weather-arrival-temp-grid {
@@ -94,11 +108,11 @@ Weather content CSS styles
 }
 
 /* Responsive design for the widest displays (e.g. monitors and laptop screens). */
-@media(min-width: 1280px) {
+@media (min-width: 1280px) {
   #weather-current-main-grid {
     grid-template-areas:
-    "weathercurrenttemp weathercurrentdetails"
-    "weathercurrenticon weathercurrentdetails";
+      "weathercurrenttemp weathercurrentdetails"
+      "weathercurrenticon weathercurrentdetails";
   }
 
   #weather-current-icon-grid {
@@ -107,8 +121,8 @@ Weather content CSS styles
 
   #weather-arrival-main-grid {
     grid-template-areas:
-    "weatherarrivaltemp weatherarrivaldetails"
-    "weatherarrivalicon weatherarrivaldetails";
+      "weatherarrivaltemp weatherarrivaldetails"
+      "weatherarrivalicon weatherarrivaldetails";
   }
 
   #weather-arrival-icon-grid {

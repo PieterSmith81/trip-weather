@@ -13,25 +13,32 @@ Header content CSS styles
   display: grid;
   grid-template-columns: min-content auto;
   align-items: center;
-  column-gap: var(--spacing);
+  /* column-gap: var(--spacing); */
   margin-top: var(--spacing);
+}
+
+#logo-container a {
+  text-decoration: none;
 }
 
 #logo {
   filter: drop-shadow(0.125rem 0.125rem 0 var(--on-primary-container));
+  margin-right: var(--spacing);
 }
 
 #header-title {
-  font-family: 'Lobster', cursive;
+  font-family: "Lobster", cursive;
   color: var(--primary);
   text-shadow: 0.125rem 0.125rem var(--on-primary-container);
 }
 
 .header-input {
   font-size: var(--font-size-medium);
-  -webkit-text-fill-color: var(--on-primary-container); /* Fixed the input type date with min and max placeholder color as per: https://stackoverflow.com/questions/72089144/how-to-change-color-of-input-type-date-with-min-and-max-locked-month-or-year-o */
+  -webkit-text-fill-color: var(
+    --on-primary-container
+  ); /* Fixed the input type date with min and max placeholder color as per: https://stackoverflow.com/questions/72089144/how-to-change-color-of-input-type-date-with-min-and-max-locked-month-or-year-o */
   margin-top: var(--spacing);
-  padding: 1rem;  
+  padding: 1rem;
   border-radius: 2rem;
   border-color: var(--primary);
   border-style: solid;
@@ -46,7 +53,9 @@ Header content CSS styles
 
 .header-input::placeholder {
   color: var(--secondary);
-  -webkit-text-fill-color: var(--secondary); /* Fixed the input type date with min and max placeholder color as per: https://stackoverflow.com/questions/72089144/how-to-change-color-of-input-type-date-with-min-and-max-locked-month-or-year-o */
+  -webkit-text-fill-color: var(
+    --secondary
+  ); /* Fixed the input type date with min and max placeholder color as per: https://stackoverflow.com/questions/72089144/how-to-change-color-of-input-type-date-with-min-and-max-locked-month-or-year-o */
   opacity: 1; /* Firefox */
 }
 
@@ -65,7 +74,7 @@ Header content CSS styles
   margin-top: var(--spacing);
   padding: 1rem 1.75rem 1rem 1.75rem;
   border-radius: 2rem;
-  border : 0;
+  border: 0;
   min-width: 240px;
 }
 
@@ -81,7 +90,7 @@ Header content CSS styles
 }
 
 /* Responsive design for wider and the widest displays (e.g. tablets, monitors, and laptop screens). */
-@media(min-width: 720px) {
+@media (min-width: 720px) {
   #datesubmit-container {
     grid-template-columns: auto min-content;
     grid-template-rows: auto;
