@@ -6,6 +6,10 @@ An interactive travel planner web app that provides users with real-time weather
 
 ### Coming Soon!
 
+## Tech Stack
+
+Node, Express, Fetch API, Webpack, Jest, Workbox service workers, JavaScript & CSS minifiers, JavaScript, CSS, HTML.
+
 ## Table of Contents
 
 - [Overview](#overview)
