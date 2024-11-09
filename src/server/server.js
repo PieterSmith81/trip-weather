@@ -5,6 +5,7 @@ Server server.js
 /*
 Global variables
 */
+
 const express = require("express");
 const dotenv = require("dotenv");
 
@@ -13,12 +14,14 @@ let projectData = {}; // Empty JS object that acts as an API endpoint for all yo
 /*
 Express server setup
 */
+
 // Start up an instance of the app.
 const app = express();
 
 /*
 Dependencies and middleware
 */
+
 // Here we are configuring Express to use body-parser as middleware.
 const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -31,11 +34,12 @@ app.use(cors());
 /*
 Global code
 */
+
 // Initialize the main project folder.
 app.use(express.static("dist"));
 
 // Set the Express server port.
-const port = 8082;
+const port = 3000;
 
 // Spin up the Express server.
 app.listen(port, () => console.log(`Listening on port: ${port}`));
@@ -47,6 +51,7 @@ dotenv.config();
 /*
 Routes
 */
+
 // GET route - returns the Webpack built client-side index.html file when the root of the website is requested.
 app.get("/", (req, res) => {
   res.sendFile("dist/index.html");
@@ -88,4 +93,5 @@ app.post("/postdata", (req, res) => {
 /*
 Exports
 */
+
 module.exports = app; // Export for Jest testing only.

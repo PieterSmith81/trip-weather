@@ -5,6 +5,7 @@ See the following URL for details on testing asynchronous JavaScript functions u
 Also see the following URL for details on testing for resolved promises using Jest: https://stackoverflow.com/questions/54525147/expect-a-jest-test-to-resolve-but-dont-care-about-the-value
 Note: Any newly created date objects must conform to the ISO 8601 format (YYYY-MM-DDTHH:mm:ss.sssZ) as per the following examples: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#examples
 */
+
 import { validateInput } from "../src/client/js/app";
 describe("Testing the validate input functionality.", () => {
   test("Testing the validateInput() function with valid input values: London (valid destination), Today's date (valid date)", () => {

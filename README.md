@@ -140,7 +140,7 @@ These include:
         ```
         npm start
         ```
-      - You can then open the production site in your browser at http://localhost:8082.
+      - You can then open the production site in your browser at http://localhost:3000.
 
     - **Development mode**, which is optimised for readability (no minification of web assets) and live reloading (client-side code changes are visible immediately with no need to build a dist subfolder first), can be launched as follows:
       - Run the following command to spin up the Express web server (if you haven't already started it as part of the production mode launch process above):
@@ -151,7 +151,7 @@ These include:
         ```
         npm run dev
         ```
-      - The development site is then accessible at http://localhost:8083 (a browser window with this URL should automatically be opened by the Webpack dev server when you run the "npm run dev" command above).
+      - The development site is then accessible at http://localhost:8080. A browser window with this URL should automatically be opened by the Webpack dev server when you run the "npm run dev" command above. Note that 8080 is the default port used by the Webpack dev server, but sometimes it opens on a higher port number like 8081, 8082, 8083, etc. depending on port availability.
 
 - **Web app usage**
 

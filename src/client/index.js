@@ -5,6 +5,7 @@ Client index.js
 /*
 Imports
 */
+
 // See https://www.w3schools.com/js/js_modules.asp for details on JavaScript module exports and import.
 import { performActions } from "./js/app";
 import { createSubmitButtonEventListener } from "./js/app";
@@ -22,6 +23,7 @@ import "./styles/content-weather.scss";
 /*
 Exports
 */
+
 export { performActions };
 
 /* Export an IIFE (immediately invoked function expression) which creates an event listener (using the createSubmitButtonEventListener function that was imported from the /client/js/app.js file above).

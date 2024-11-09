@@ -5,12 +5,28 @@ Client app.js
 /*
 Global variables
 */
-const server = "localhost";
-const port = 8082;
+
+/* Assume by default that the server and port are remote and running on https (so, assume that this is a live, production website).
+In this case, just send all fetch requests to "/[api endpoint]" on the same server that served the website. */
+let expressServer = "";
+
+/* But if the website is running on the localhost, then set the protocol, server, and port to http, localhost, and 3000 respectively.
+This is done since we then assume that the website is running locally on the Webpack dev server. */
+if (
+  location.hostname === "localhost" ||
+  location.hostname === "127.0.0.1" ||
+  location.hostname === ""
+) {
+  expressServer = "http://localhost:3000";
+  alert("Running on localhost");
+} else {
+  alert("Running on a remote server");
+}
 
 /*
 Helper functions and function expressions
 */
+
 // Function expression - Calculate the difference, in days, between two date strings. Note, the fromDate parameter defaults to today's date (new Date()) if no from date is passed to this function expression (i.e., if undefined is passed as the fromDate argument).
 const calcDayDifference = (fromDate = new Date(), toDate) => {
   const difference = new Date(toDate).getTime() - new Date(fromDate).getTime();
@@ -78,6 +94,7 @@ const mpsToKmph = (mps, digits) => {
 /*
 Main function expressions
 */
+
 // Function expression - Preform some input validation before continuing.
 const validateInput = async (destinationName, arrivalDate) => {
   // console.log('Running validateInput function; // Debug code.
@@ -114,9 +131,7 @@ const getGeoData = async (destinationName, arrivalDate) => {
     /* One liner below to perform an Express server route get using the fetch browser API, async JavaScript code, and JavaScript promises.
     See the following URL for more details: https://stackoverflow.com/questions/61814037/fetch-request-and-convert-it-to-json-in-a-single-line */
     apiKey += await (
-      await fetch(
-        `http://${server}:${port}/getapikey?dotenv=GEONAMES_API_USERNAME`
-      )
+      await fetch(`${expressServer}/getapikey?dotenv=GEONAMES_API_USERNAME`)
     ).text();
     // console.log(apiKey); // Debug code.
   } catch (err) {
@@ -158,9 +173,7 @@ const getWeatherAndImageData = async (geoData) => {
     /* One liner below to perform an Express server route get using the fetch browser API, async JavaScript code, and JavaScript promises.
     See the following URL for more details: https://stackoverflow.com/questions/61814037/fetch-request-and-convert-it-to-json-in-a-single-line */
     apiKey += await (
-      await fetch(
-        `http://${server}:${port}/getapikey?dotenv=WEATHERBIT_API_KEY`
-      )
+      await fetch(`${expressServer}/getapikey?dotenv=WEATHERBIT_API_KEY`)
     ).text();
     // console.log(apiKey); // Debug code.
   } catch (err) {
@@ -230,7 +243,7 @@ const getWeatherAndImageData = async (geoData) => {
     /* One liner below to perform an Express server route get using the fetch browser API, async JavaScript code, and JavaScript promises.
     See the following URL for more details: https://stackoverflow.com/questions/61814037/fetch-request-and-convert-it-to-json-in-a-single-line */
     apiKey += await (
-      await fetch(`http://${server}:${port}/getapikey?dotenv=PIXABAY_API_KEY`)
+      await fetch(`${expressServer}/getapikey?dotenv=PIXABAY_API_KEY`)
     ).text();
     // console.log(apiKey); // Debug code.
   } catch (err) {
@@ -363,7 +376,7 @@ const retrieveData = async () => {
   // console.log('Running retrieveData function (i.e. Express server GET request)'); // Debug code.
 
   // Try to get data using the fetch browser API.
-  const response = await fetch(`http://${server}:${port}/getdata`);
+  const response = await fetch(`${expressServer}/getdata`);
 
   // Assign the fetched data (in JSON format) to a variable.
   const data = await response.json();
@@ -537,6 +550,7 @@ const retrieveData = async () => {
 /*
 Main functions
 */
+
 // Function - Main button click event handler function that performs all the actions, calls all the functions, and handles all the promises in our code.
 function performActions(event) {
   // Call a function to validate the user input from your UI.
@@ -575,7 +589,7 @@ function performActions(event) {
             getWeatherAndImageData(geoData).then(
               (result) => {
                 // Post data to the Express server's POST route.
-                sendData(`http://${server}:${port}/postdata`, result)
+                sendData(`${expressServer}/postdata`, result)
                   // Next, get data back from the Express server's GET route and update the UI.
                   /* Note the use of chained promises below by using .then().
                   This handles the fulfilled and rejected states of the promise returned by the sendData async function */
@@ -628,6 +642,7 @@ function performActions(event) {
 /*
 Events
 */
+
 /* The addEventListener line below was wrapped inside a function (createSubmitButtonEventListener) which is exported below and then imported into the main client index.js file (/src/client/index.js).
 The imported createSubmitButtonEventListener function is then exported again inside an IIFE (immediately invoked function expression) at the end of the client index.js file.
 See the IIFE code and comments at the end of the client index.js file (/src/client/index.js) as to why this was done. */
@@ -653,11 +668,13 @@ function createEnterKeyEventListener() {
 /*
 Global code
 */
+
 // Nothing here.
 
 /*
 Exports
 */
+
 // See https://www.w3schools.com/js/js_modules.asp for details on JavaScript module exports and import.
 export {
   performActions,
