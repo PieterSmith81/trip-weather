@@ -18,9 +18,6 @@ if (
   location.hostname === ""
 ) {
   expressServer = "http://localhost:3000";
-  alert("Running on localhost");
-} else {
-  alert("Running on a remote server");
 }
 
 /*
@@ -123,7 +120,7 @@ const getGeoData = async (destinationName, arrivalDate) => {
   /* See https://www.geonames.org/export/geonames-search.html for the GeoNames API documentation and a destination based search API call example.
   Had to register for a free GeoNames account to receive an API key to use with this project.
   Note, all API keys are retrieved using an Express server route via the dotenv Node module to keep API keys locally and not expose/upload them to version control on the Internet (i.e. to GitHub). */
-  const baseURL = "http://api.geonames.org/searchJSON?q=";
+  const baseURL = "https://secure.geonames.org/searchJSON?q=";
   // const apikey = 'API key goes here'; // Debug code.
 
   let apiKey = "&maxRows=1&username="; // Note that we are only fetching one row (maxRows=1), i.e. the top result, from the GeoNames API.
