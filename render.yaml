@@ -1,0 +1,18 @@
+# Exported from Render on 2024-11-10T16:56:55Z
+services:
+  - type: web
+    name: trip-weather
+    runtime: node
+    repo: https://github.com/PieterSmith81/trip-weather
+    plan: free
+    envVars:
+      - key: PIXABAY_API_KEY
+        sync: false
+      - key: WEATHERBIT_API_KEY
+        sync: false
+      - key: GEONAMES_API_USERNAME
+        sync: false
+    region: frankfurt
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+version: "1"

@@ -269,7 +269,7 @@ const getWeatherAndImageData = async (geoData) => {
     // console.log(dataImage.hits[0]); // Debug code.
 
     destinationImageURL =
-      dataImage.total > 0 ? dataImage.hits[0].webformatURL : "";
+      dataImage.total > 0 ? dataImage.hits[0].largeImageURL : "";
   } catch (err) {
     // Catches http, connection, and other errors.
     /* If an error occurs while fetching image data from Pixabay (let's say the Pixabay site or API is down), then just set the destinationImageURL to blank.
