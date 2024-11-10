@@ -4,7 +4,7 @@ An interactive travel planner web app that provides users with real-time weather
 
 ## Live Website
 
-### Coming Soon!
+### https://trip-weather-sdpi.onrender.com
 
 ## Tech Stack
 
