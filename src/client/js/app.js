@@ -250,7 +250,7 @@ const getWeatherAndImageData = async (geoData) => {
   // Get image data.
   // See https://pixabay.com/api/docs for the Pixabay API documentation and an example request and response.
   baseURL =
-    "https://pixabay.com/api/?per_page=3&q=" +
+    "https://pixabay.com/api/?safesearch=true&per_page=3&q=" +
     encodeURIComponent(geoData.destinationName) +
     encodeURIComponent(" ") +
     (geoData.regionName
