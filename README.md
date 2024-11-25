@@ -2,7 +2,7 @@
 
 An interactive travel planner web app that provides users with real-time weather updates before departure.
 
-## Live Website
+## Live Demo Website
 
 ### https://trip-weather-sdpi.onrender.com
 
